@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import confetti from "canvas-confetti";
-import { onMounted } from "vue";
+import {onMounted} from "vue";
 import RiShareCircleLine from "~icons/ri/share-circle-line";
 import RiCodeBoxLine from "~icons/ri/code-box-line";
 import RiBookReadLine from "~icons/ri/book-read-line";
@@ -17,7 +17,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="plugin-starter">
+  <section id="plugin-redirection">
     <div class="wrapper">
       <span class="title"> 你已经成功运行起了插件！ </span>
       <span class="message">你可以点击下方文档继续下一步</span>
@@ -76,7 +76,7 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-#plugin-starter {
+#plugin-redirection {
   height: 100vh;
   background-color: #f8fafc;
 }
