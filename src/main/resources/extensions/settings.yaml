@@ -1,0 +1,43 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: plugin-redirection-settings
+spec:
+  forms:
+    - group: basic
+      label: 设置
+      formSchema:
+        - $formkit: radio
+          name: enableRedirection
+          id: enableRedirection
+          label: 是否启用重定向功能
+          value: false
+          options:
+            - label: 启用
+              value: true
+            - label: 关闭
+              value: false
+        - $formkit: repeater
+          name: redirectionConfig
+          label: 重定向配置
+          value: []
+          children:
+            - $formkit: url
+              name: originLinkPath
+              label: 源链接路径
+              help: 原链接只包含path部分，尾部不要包含/符号
+              placeholder: /archives/1711109931805
+            - $formkit: url
+              name: targetLinkPath
+              label: 目标链接路径
+              placeholder: /archives/hello-halo
+            - $formkit: select
+              name: redirectType
+              label: 重定向类型
+              help: 注：永久重定向会在浏览器缓存，停用或禁用插件后如果想让永久重定向失效，需要清除浏览器缓存
+              value: 301
+              options:
+                - label: 301永久重定向
+                  value: 301
+                - label: 302临时重定向
+                  value: 302
