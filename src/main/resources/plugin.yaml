@@ -10,7 +10,7 @@ spec:
   requires: ">=2.13.0"
   author:
     name: flycat
-    website: https://github.com/flycati
+    website: https://blog.flycat.tech
   logo: logo.png
   homepage: https://github.com/flycati/halo-plugin-redirection
   repo: https://github.com/flycati/halo-plugin-redirection

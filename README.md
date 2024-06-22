@@ -1,76 +1,20 @@
-# plugin-starter
+## 资源重定向插件
 
-Halo 2.0 插件开发快速开始模板。
+对指定的资源请求进行重定向操作。
 
-## 开发环境
+建站之时设置的文章链接slug形式是`/archives/时间戳`，但是后面发现在谷歌/必应的搜索管理后台中，无法根据url判断是哪篇文章，必须点进去链接才知道，所以将文章链接形式改成了`/archives/hello-word`形式，slug使用用`-`连接的小写英文单词。
 
-插件开发的详细文档请查阅：<https://docs.halo.run/developer-guide/plugin/introduction>
+强迫症无法容忍一个站点两种形式的链接，把原来时间戳的链接都改成了新规则形式的链接，为了保证原来的链接仍然能访问，所以做了这个重定向的插件。
 
-所需环境：
+## 使用方式
 
-1. Java 17
-2. Node 18
-3. pnpm 8
-4. Docker (可选)
+1. 下载，可以在[Release](https://github.com/flycati/halo-plugin-redirection/releases)页面中下载最新版本的插件的Jar文件；
+2. 安装，插件安装和更新方式可参考：https://docs.halo.run/user-guide/plugins。
 
-克隆项目：
+## 用法说明
 
-```bash
-git clone git@github.com:halo-sigs/plugin-starter.git
+1. 在侧边栏点击插件选项，选中「资源重定向插件」，并进入设置tab页。
+2. 选择启用功能，在下面增加重定向配置
+3. 点击下面的添加按钮可添加多个重定向配置，点击对应配置右边的`x`按钮可以删除配置
 
-# 或者当你 fork 之后
-
-git clone git@github.com:{your_github_id}/plugin-starter.git
-```
-
-```bash
-cd path/to/plugin-starter
-```
-
-### 运行方式 1（推荐）
-
-> 此方式需要本地安装 Docker
-
-```bash
-# macOS / Linux
-./gradlew pnpmInstall
-
-# Windows
-./gradlew.bat pnpmInstall
-```
-
-```bash
-# macOS / Linux
-./gradlew haloServer
-
-# Windows
-./gradlew.bat haloServer
-```
-
-执行此命令后，会自动创建一个 Halo 的 Docker 容器并加载当前的插件，更多文档可查阅：<https://docs.halo.run/developer-guide/plugin/basics/devtools>
-
-### 运行方式 2
-
-> 此方式需要使用源码运行 Halo
-
-编译插件：
-
-```bash
-# macOS / Linux
-./gradlew build
-
-# Windows
-./gradlew.bat build
-```
-
-修改 Halo 配置文件：
-
-```yaml
-halo:
-  plugin:
-    runtime-mode: development
-    fixedPluginPath:
-      - "/path/to/plugin-starter"
-```
-
-最后重启 Halo 项目即可。
+![CleanShot 2024-06-22 at 14.56.32@2x](https://img-gh.flycat.tech/03/main/pg/202406/e9c82f2aeb9b3cceed279aff82018981825.webp)
